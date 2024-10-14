@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavMenu from "@/components/NavMenu/NavMenu";
 import Header from "@/components/Header/Header";
+import { domAnimation, LazyMotion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,13 +17,38 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>
-        <Header />
-        <div className="flex">
-          <NavMenu />
-          {children}
-        </div>
-      </body>
+      <LazyMotion features={domAnimation}>
+        <body>
+          <Header />
+          <div className="flex-1 flex-col">
+            <div className="flex bg-white h-[72px] justify-between items-center py-4 px-10 ">
+              <p>поиск</p>
+              <div className="flex items-center gap-4">
+                <Link href={"/"}>
+                  <Image
+                    src="/Header/Notification.svg"
+                    alt="Notification"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link
+                  href={"/"}
+                  className="w-10 h-10 flex justify-center items-center bg-[#D8D8D8] rounded-full"
+                >
+                  <Image
+                    src="/Header/User.png"
+                    alt="User"
+                    width={38}
+                    height={38}
+                  />
+                </Link>
+              </div>
+            </div>
+            {children}
+          </div>
+        </body>
+      </LazyMotion>
     </html>
   );
 }
