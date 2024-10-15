@@ -1,7 +1,7 @@
 import React from "react";
 import NavLink from "./NavLink";
 import MenuData from "./menuData";
-import { color, m } from "framer-motion";
+import { m } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 interface NavMenuProps {

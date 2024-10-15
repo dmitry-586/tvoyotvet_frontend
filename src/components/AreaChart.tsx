@@ -1,20 +1,12 @@
 "use client";
 
+import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+
 interface CustomTooltipProps {
   active?: boolean;
   payload?: { value: number }[];
   label?: string;
 }
-
-import React, { useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
 
 const salesData = [
   {
