@@ -25,7 +25,8 @@ body {
   width: 80px;
   height: 80px;
   top: 150px;
-  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .lds-ripple div {
   position: absolute;

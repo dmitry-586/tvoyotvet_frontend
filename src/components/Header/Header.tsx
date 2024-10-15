@@ -7,7 +7,6 @@ import NavMenu from "../NavMenu/NavMenu";
 
 const Header = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
@@ -31,7 +30,7 @@ const Header = () => {
             <div className="flex gap-2 items-center">
               <span className="w-8 h-8 bg-[#EFF0F6] rounded-[4px]" />
               <h1
-                className={`leading-none text-sm ${
+                className={`leading-none text-sm font-bold ${
                   isCollapsed ? "hidden" : ""
                 }`}
               >

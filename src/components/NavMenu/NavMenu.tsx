@@ -1,4 +1,3 @@
-import React from "react";
 import NavLink from "./NavLink";
 import MenuData from "./menuData";
 import { m } from "framer-motion";
@@ -30,7 +29,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isCollapsed }) => {
             pathname == item.href ? "bg-[#EAEAEF]" : ""
           }`}
           linkStyles={`${
-            pathname == item.href ? "text-black font-semibold" : ""
+            pathname == item.href ? "text-[#273B4A] font-semibold" : ""
           }`}
           key={item.id}
           href={item.href}

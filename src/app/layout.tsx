@@ -4,6 +4,9 @@ import Header from "@/components/Header/Header";
 import { domAnimation, LazyMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Public_Sans } from "next/font/google";
+
+const publicSans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={publicSans.className}>
       <LazyMotion features={domAnimation}>
         <body>
           <Header />

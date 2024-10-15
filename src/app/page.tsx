@@ -1,31 +1,57 @@
-import BarChart from "@/components/BarChart";
-import AreaChart from "@/components/AreaChart";
+"use client";
 
-interface GridItemProps {
-  title: string;
-  children: React.ReactNode;
-}
+import DashboardAreaChart from "@/components/Graphics/DashboardAreaChart";
+import { ConfigProvider, DatePicker, DatePickerProps } from "antd";
+import type { Dayjs } from "dayjs";
+import locale from "antd/locale/ru_RU";
+import Image from "next/image";
 
 export default function Home() {
+  const onChange: DatePickerProps<Dayjs[]>["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
   return (
-    <main className="flex flex-col h-full items-center">
-      <div className="grid gap-10 p-4">
-        <GridItem title="Bar">
-          <BarChart />
-        </GridItem>
-        <GridItem title="Area">
-          <AreaChart />
-        </GridItem>
+    <main className="flex flex-col h-full px-8 py-6">
+      <section className="flex justify-between items-center">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-base leading-none font-semibold">
+            &#128075; Привет, Иван!
+          </h3>
+          <p className="text-[#626C70] text-sm">
+            Здесь собрано все самое важное
+          </p>
+        </div>
+        <div className="flex flex-col gap-1">
+          <div className="flex gap-1">
+            <Image
+              src="/dashboard/Date_range_fill.svg"
+              alt="date"
+              width={16}
+              height={16}
+            />
+            <p>Дата</p>
+          </div>
+          <ConfigProvider locale={locale}>
+            <DatePicker
+              onChange={onChange}
+              needConfirm
+              style={{ width: "370px", height: "40px" }}
+              placeholder="— / — / —"
+              suffixIcon={false}
+            />
+          </ConfigProvider>
+        </div>
+      </section>
+      <div className="mt-6">
+        <div className="flex gap-3">
+          <DashboardAreaChart title="Всего отзывов" />
+          <DashboardAreaChart title="Положительных" />
+          <DashboardAreaChart title="Отрицательных" />
+          <div></div>
+        </div>
+        <div></div>
       </div>
     </main>
-  );
-}
-
-function GridItem({ title, children }: GridItemProps) {
-  return (
-    <div className="flex flex-col gap-6 items-center justify-center p-6 bg-white rounded-[20px] h-[272px] w-[359px]">
-      <h3 className="text-2xl font-semibold text-black">{title}</h3>
-      {children}
-    </div>
   );
 }
