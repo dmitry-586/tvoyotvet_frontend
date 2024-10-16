@@ -11,13 +11,13 @@ export interface GridItemProps {
 
 export interface LegendProps {
   title: string;
-  data: { ton: string; value: number }[];
+  data: { ton?: string; value: number }[];
   colors: string[];
 }
 
 export interface PieChartItemProps {
   title: string;
-  data: any[];
+  data: { value: number }[];
 }
 
 export interface NavMenuProps {
