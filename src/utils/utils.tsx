@@ -1,5 +1,5 @@
-import { salesData } from "@/app/data";
-import { CustomTooltipProps } from "@/components/Graphics/interfaces";
+import { salesData } from "../../public/data";
+import { CustomTooltipProps } from "@/interfaces/interfaces";
 
 export const ChangeMoney = () => {
   if (salesData.length === 0) return 0;
@@ -20,11 +20,27 @@ export const SumMoney = () => {
 export const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-transparent flex items-center mt-[35px]">
+      <div className="bg-white rounded flex items-center">
         <p className="text-sm text-black">
-          <span className="font-medium text-[#273B4A]">
-            ${payload[0].value}
-          </span>
+          <span className="font-medium text-[#273B4A]">{payload[0].value}</span>
+        </p>
+      </div>
+    );
+  }
+};
+
+export const CustomTooltipAnalytics = ({
+  active,
+  payload,
+  label,
+}: CustomTooltipProps) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-4 bg-[#9D9D9D] flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg text-white">{label}</p>
+        <p className="text-sm text-white">
+          money:
+          <span className="ml-2">${payload[0].value}</span>
         </p>
       </div>
     );

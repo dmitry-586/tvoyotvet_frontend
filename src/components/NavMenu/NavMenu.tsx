@@ -2,10 +2,7 @@ import NavLink from "./NavLink";
 import MenuData from "./menuData";
 import { m } from "framer-motion";
 import { usePathname } from "next/navigation";
-
-interface NavMenuProps {
-  isCollapsed: boolean;
-}
+import { NavMenuProps } from "@/interfaces/interfaces";
 
 const NavMenu: React.FC<NavMenuProps> = ({ isCollapsed }) => {
   const menu = MenuData();

@@ -1,44 +1,9 @@
 "use client";
 
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
-
-interface CustomTooltipProps {
-  active?: boolean;
-  payload?: { value: number }[];
-  label?: string;
-}
-
-interface GridItemProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-const salesData = [
-  {
-    name: "1",
-    money: 5800,
-  },
-  {
-    name: "2",
-    money: 7000,
-  },
-  {
-    name: "3",
-    money: 4800,
-  },
-  {
-    name: "4",
-    money: 3908,
-  },
-  {
-    name: "5",
-    money: 4800,
-  },
-  {
-    name: "6",
-    money: 6800,
-  },
-];
+import { salesData } from "../../../public/data";
+import { GridItemProps } from "@/interfaces/interfaces";
+import { CustomTooltipAnalytics } from "@/utils/utils";
 
 function GridItem({ title, children }: GridItemProps) {
   return (
@@ -51,7 +16,7 @@ function GridItem({ title, children }: GridItemProps) {
 
 const AreaChartComponent = () => {
   const ChangeMoney = () => {
-    if (salesData.length === 0) return 0; 
+    if (salesData.length === 0) return 0;
     const initialValue = salesData[0].money;
     const currentValue = salesData[salesData.length - 1].money;
     const change = ((currentValue - initialValue) / initialValue) * 100;
@@ -70,8 +35,7 @@ const AreaChartComponent = () => {
               fill: "rgba(0, 0, 0, 0)",
             }}
           />
-          {/* <YAxis yAxisId="primary" /> */}
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltipAnalytics />} />
           <defs>
             <linearGradient id="gradient" x1="0%" y1="-20%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#838383" />
@@ -117,17 +81,3 @@ const AreaChartComponent = () => {
 };
 
 export default AreaChartComponent;
-
-const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="p-4 bg-[#9D9D9D] flex flex-col gap-4 rounded-md">
-        <p className="text-medium text-lg text-white">{label}</p>
-        <p className="text-sm text-white">
-          money:
-          <span className="ml-2">${payload[0].value}</span>
-        </p>
-      </div>
-    );
-  }
-};

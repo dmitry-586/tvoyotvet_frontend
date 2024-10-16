@@ -2,7 +2,7 @@
 
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 import Image from "next/image";
-import { salesData } from "../../app/data.js";
+import { salesData } from "../../../public/data.js";
 import { SumMoney, ChangeMoney, CustomTooltip } from "../../utils/utils";
 
 function DashboardAreaChart({ title }: { title: string }) {
@@ -43,14 +43,6 @@ function DashboardAreaChart({ title }: { title: string }) {
             type={"monotone"}
             stroke="#9D9D9D"
             strokeWidth={2}
-          />
-          <Area
-            dataKey="money"
-            fill="url(#gradient)"
-            type={"monotone"}
-            stroke="#9D9D9D"
-            strokeWidth={0}
-            transform={`translate(0, 5)`}
           />
         </AreaChart>
       </ResponsiveContainer>

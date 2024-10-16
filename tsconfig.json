@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/Graphics/BarChart.tsx",
-    "src/app/page.tsx"
+    "src/app/page.tsx",
+    "src/components/Dashboard/PieChart/DashboardPieChart.tsx"
   ],
   "exclude": ["node_modules"]
 }

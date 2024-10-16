@@ -1,10 +1,13 @@
 "use client";
 
-import DashboardAreaChart from "@/components/Graphics/DashboardAreaChart";
+import DashboardAreaChart from "@/components/Dashboard/DashboardAreaChart";
 import { ConfigProvider, DatePicker, DatePickerProps } from "antd";
 import type { Dayjs } from "dayjs";
 import locale from "antd/locale/ru_RU";
 import Image from "next/image";
+import PieChartItem from "@/components/Dashboard/PieChart/DashboardPieChart";
+import { data, data2 } from "../../public/data";
+import DashboardAreaChart2 from "@/components/Dashboard/DashboardAreaChart2";
 
 export default function Home() {
   const onChange: DatePickerProps<Dayjs[]>["onChange"] = (date, dateString) => {
@@ -44,13 +47,23 @@ export default function Home() {
         </div>
       </section>
       <div className="mt-6">
-        <div className="flex gap-3">
-          <DashboardAreaChart title="Всего отзывов" />
-          <DashboardAreaChart title="Положительных" />
-          <DashboardAreaChart title="Отрицательных" />
-          <div></div>
+        <div className="flex gap-5">
+          <div className="flex flex-col gap-3">
+            <div className="flex gap-3">
+              <DashboardAreaChart title="Всего отзывов" />
+              <DashboardAreaChart title="Положительных" />
+              <DashboardAreaChart title="Отрицательных" />
+            </div>
+            <div className="flex gap-3">
+              <DashboardAreaChart2 />
+              <DashboardAreaChart2 />
+            </div>
+          </div>
+          <div className="w-full flex-1 flex flex-col gap-5">
+            <PieChartItem title="Тональность" data={data} />
+            <PieChartItem title="Содержание" data={data2} />
+          </div>
         </div>
-        <div></div>
       </div>
     </main>
   );

@@ -1,15 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-interface NavLinkProps {
-  src: string;
-  href: string;
-  title: string;
-  className: string;
-  isCollapsed: boolean;
-  linkStyles: string;
-  size: string;
-}
+import { NavLinkProps } from "@/interfaces/interfaces";
 
 const NavLink: React.FC<NavLinkProps> = ({
   src,

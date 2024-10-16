@@ -5,7 +5,7 @@
 body {
   background-color: #f2f4f6;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 * {
@@ -67,4 +67,14 @@ body {
     height: 80px;
     opacity: 0;
   }
+}
+
+/* select-wrapper */
+.select-wrapper select {
+  background: #f5f6f7 no-repeat;
+  appearance: none;
+  padding-right: 10px;
+  background-image: url("/dashboard/CaretDown.svg");
+  background-position: right 10px center;
+  background-size: 16px 16px;
 }

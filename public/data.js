@@ -25,15 +25,15 @@ export const salesData = [
   },
   {
     name: "7",
-    money: 1800,
+    money: 3800,
   },
   {
     name: "8",
-    money: 900,
+    money: 1900,
   },
   {
     name: "9",
-    money: 0,
+    money: 2000,
   },
   {
     name: "qqqqqqqq",
@@ -45,4 +45,14 @@ export const salesData = [
   },
 ];
 
-// export default salesData;
+export const data = [
+  { value: 800, ton: "Позитивная" },
+  { value: 100, ton: "Нейтральная" },
+  { value: 300, ton: "Не определено" },
+  { value: 200, ton: "Негативная" },
+];
+
+export const data2 = [
+  { value: 1600, ton: "С ответом" },
+  { value: 700, ton: "Без ответа" },
+];

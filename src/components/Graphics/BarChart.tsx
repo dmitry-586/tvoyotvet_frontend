@@ -1,37 +1,10 @@
 "use client";
 
-interface CustomTooltipProps {
-  active?: boolean;
-  payload?: { value: number }[];
-  label?: string;
-}
-
-interface GridItemProps {
-  title: string;
-  children: React.ReactNode;
-}
-
 import React from "react";
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from "recharts";
-
-const salesData = [
-  {
-    name: "Mar",
-    money: 8800,
-  },
-  {
-    name: "Apr",
-    money: 3908,
-  },
-  {
-    name: "May",
-    money: 4800,
-  },
-  {
-    name: "Jun",
-    money: 3800,
-  },
-];
+import { salesData } from "../../../public/data";
+import { CustomTooltipAnalytics } from "@/utils/utils";
+import { GridItemProps } from "@/interfaces/interfaces";
 
 function GridItem({ title, children }: GridItemProps) {
   return (
@@ -65,8 +38,7 @@ const BarChartComponent = () => {
             axisLine={false}
             tickLine={false}
           />
-          {/* <YAxis /> */}
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltipAnalytics />} />
           <Bar
             dataKey="money"
             fill="#9D9D9D"
@@ -88,17 +60,3 @@ const BarChartComponent = () => {
 };
 
 export default BarChartComponent;
-
-const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="p-4 bg-[#9D9D9D] flex flex-col gap-4 rounded-md">
-        <p className="text-medium text-lg text-white">{label}</p>
-        <p className="text-sm text-white">
-          money:
-          <span className="ml-2">${payload[0].value}</span>
-        </p>
-      </div>
-    );
-  }
-};
