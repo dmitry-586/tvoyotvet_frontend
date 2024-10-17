@@ -6,7 +6,7 @@ export interface CustomTooltipProps {
 
 export interface GridItemProps {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface LegendProps {

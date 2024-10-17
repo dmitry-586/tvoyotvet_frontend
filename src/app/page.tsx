@@ -55,8 +55,8 @@ export default function Home() {
               <DashboardAreaChart title="Отрицательных" />
             </div>
             <div className="flex gap-3">
-              <DashboardAreaChart2 />
-              <DashboardAreaChart2 />
+              <DashboardAreaChart2 title="С ответом" />
+              <DashboardAreaChart2 title="Средний рейтинг" />
             </div>
           </div>
           <div className="w-full flex-1 flex flex-col gap-5">
