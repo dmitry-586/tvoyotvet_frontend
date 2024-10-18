@@ -2,8 +2,8 @@
 
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 import Image from "next/image";
-import { salesData } from "../../../public/data.js";
-import { SumMoney, ChangeMoney, CustomTooltip } from "../../utils/utils";
+import { salesData } from "../../../../public/data";
+import { SumMoney, ChangeMoney, CustomTooltip } from "../../../utils/utils";
 
 function DashboardAreaChart({ title }: { title: string }) {
   return (
@@ -38,7 +38,7 @@ function DashboardAreaChart({ title }: { title: string }) {
         <AreaChart width={170} height={155} data={salesData}>
           <Tooltip content={<CustomTooltip />} />
           <Area
-            dataKey="money"
+            dataKey="money2"
             fill="none"
             type={"monotone"}
             stroke="#9D9D9D"

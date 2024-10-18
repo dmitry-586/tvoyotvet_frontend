@@ -43,7 +43,7 @@ const Header = () => {
               onClick={toggleSidebar}
               className={`w-4 h-7 border rounded-sm border-[#EFF0F6] flex justify-center items-center absolute right-[-8px] bg-white ${
                 isCollapsed ? "rotate-180" : ""
-              } duration-300`}
+              } duration-300 z-10`}
             >
               <Image
                 src="/navMenu/arrowLeft.svg"

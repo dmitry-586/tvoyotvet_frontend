@@ -21,7 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({
         alt="LinkImage"
         width="0"
         height="0"
-        style={{ width: size, height: size }}
+        style={{ width: "auto", height: size }}
       />
       {isCollapsed ? null : (
         <p className={`text-[#666687] ${linkStyles}`}>{title}</p>

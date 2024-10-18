@@ -28,21 +28,3 @@ export const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
     );
   }
 };
-
-export const CustomTooltipAnalytics = ({
-  active,
-  payload,
-  label,
-}: CustomTooltipProps) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="p-4 bg-[#9D9D9D] flex flex-col gap-4 rounded-md">
-        <p className="text-medium text-lg text-white">{label}</p>
-        <p className="text-sm text-white">
-          money:
-          <span className="ml-2">${payload[0].value}</span>
-        </p>
-      </div>
-    );
-  }
-};

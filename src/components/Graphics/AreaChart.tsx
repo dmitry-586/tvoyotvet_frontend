@@ -3,7 +3,7 @@
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { salesData } from "../../../public/data";
 import { GridItemProps } from "@/interfaces/interfaces";
-import { CustomTooltipAnalytics } from "@/utils/utils";
+import { CustomTooltip } from "@/utils/utils";
 
 function GridItem({ title, children }: GridItemProps) {
   return (
@@ -35,7 +35,7 @@ const AreaChartComponent = () => {
               fill: "rgba(0, 0, 0, 0)",
             }}
           />
-          <Tooltip content={<CustomTooltipAnalytics />} />
+          <Tooltip content={<CustomTooltip />} />
           <defs>
             <linearGradient id="gradient" x1="0%" y1="-20%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#838383" />

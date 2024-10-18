@@ -1,13 +1,14 @@
 "use client";
 
-import DashboardAreaChart from "@/components/Dashboard/DashboardAreaChart";
+import DashboardAreaChart from "@/components/Dashboard/AreaChart/DashboardAreaChart";
 import { ConfigProvider, DatePicker, DatePickerProps } from "antd";
 import type { Dayjs } from "dayjs";
 import locale from "antd/locale/ru_RU";
 import Image from "next/image";
 import PieChartItem from "@/components/Dashboard/PieChart/DashboardPieChart";
 import { data, data2 } from "../../public/data";
-import DashboardAreaChart2 from "@/components/Dashboard/DashboardAreaChart2";
+import DashboardAreaChart2 from "@/components/Dashboard/AreaChart/DashboardAreaChart2";
+import DashboardBarChart from "@/components/Dashboard/DashboardBarChart";
 
 export default function Home() {
   const onChange: DatePickerProps<Dayjs[]>["onChange"] = (date, dateString) => {
@@ -58,6 +59,7 @@ export default function Home() {
               <DashboardAreaChart2 title="С ответом" />
               <DashboardAreaChart2 title="Средний рейтинг" />
             </div>
+            <DashboardBarChart title="Распределение отзывов по времени и тональности" />
           </div>
           <div className="w-full flex-1 flex flex-col gap-5">
             <PieChartItem title="Тональность" data={data} />

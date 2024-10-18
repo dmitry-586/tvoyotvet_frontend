@@ -3,7 +3,7 @@
 import React from "react";
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { salesData } from "../../../public/data";
-import { CustomTooltipAnalytics } from "@/utils/utils";
+import { CustomTooltip } from "@/utils/utils";
 import { GridItemProps } from "@/interfaces/interfaces";
 
 function GridItem({ title, children }: GridItemProps) {
@@ -38,7 +38,7 @@ const BarChartComponent = () => {
             axisLine={false}
             tickLine={false}
           />
-          <Tooltip content={<CustomTooltipAnalytics />} />
+          <Tooltip content={<CustomTooltip />} />
           <Bar
             dataKey="money"
             fill="#9D9D9D"
