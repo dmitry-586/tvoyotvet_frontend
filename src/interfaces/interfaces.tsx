@@ -33,3 +33,9 @@ export interface NavLinkProps {
   linkStyles: string;
   size: string;
 }
+
+export interface ProfileFormData {
+  titles: string[];
+  placeholders: string[];
+  placeholdersImage: string[];
+}

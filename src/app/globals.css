@@ -78,3 +78,19 @@ body {
   background-position: right 10px center;
   background-size: 16px 16px;
 }
+
+/* headerInputs */
+.input-container {
+  position: relative;
+}
+
+.image-placeholder {
+  padding-left: 44px; /* Отступ для текста */
+  background-size: 20px; /* Размер изображения */
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Позиция изображения */
+}
+
+.image-placeholder:focus {
+  outline: none; /* Убираем обводку при фокусе */
+}
