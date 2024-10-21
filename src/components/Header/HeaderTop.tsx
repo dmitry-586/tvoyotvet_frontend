@@ -12,7 +12,6 @@ const HeaderTop = () => {
   };
   return (
     <div className="flex bg-white h-[72px] justify-between items-center py-4 px-10 relative">
-      <p>поиск</p>
       <div className="flex items-center gap-4">
         <Link href={"/"}>
           <Image
