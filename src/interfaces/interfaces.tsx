@@ -22,6 +22,7 @@ export interface PieChartItemProps {
 
 export interface NavMenuProps {
   isCollapsed: boolean;
+  toggleSidebar?: () => void;
 }
 
 export interface NavLinkProps {
@@ -38,4 +39,6 @@ export interface ProfileFormData {
   titles: string[];
   placeholders: string[];
   placeholdersImage: string[];
+  className?: string;
+  prefix: string;
 }

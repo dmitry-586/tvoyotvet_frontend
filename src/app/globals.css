@@ -85,10 +85,10 @@ body {
 }
 
 .image-placeholder {
-  padding-left: 44px; /* Отступ для текста */
+  /* padding-left: 44px;  */
   background-size: 20px; /* Размер изображения */
   background-repeat: no-repeat;
-  background-position: 10px center; /* Позиция изображения */
+  /* background-position: right 10px center; */
 }
 
 .image-placeholder:focus {

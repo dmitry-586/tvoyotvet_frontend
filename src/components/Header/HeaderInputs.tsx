@@ -8,31 +8,33 @@ const HeaderInputs: React.FC<ProfileFormData> = ({
   titles,
   placeholders,
   placeholdersImage,
+  className,
+  prefix,
 }) => {
   const inputData = titles.map((title, index) => ({
     title,
     placeholder: placeholders[index],
-    name: `input${index + 1}`,
+    name: `${prefix}_input${index + 1}`,
     placeholderImage: placeholdersImage[index],
   }));
 
   return (
-    <form className="flex flex-col gap-[14px] w-[250px]">
+    <div className="flex flex-col gap-[14px] w-[250px]">
       {inputData.map((input, index) => (
         <div key={index} className="input-container">
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-2 text-sm">
             {input.title}:
             <input
               type="text"
               name={input.name}
               placeholder={input.placeholder}
-              className="border w-full h-10 rounded pl-[10px] text-sm image-placeholder"
+              className={`border w-full h-10 rounded pl-11 text-sm image-placeholder bg-[position:10px_center] ${className}`}
               style={{ backgroundImage: `url(${input.placeholderImage})` }}
             />
           </label>
         </div>
       ))}
-    </form>
+    </div>
   );
 };
 
